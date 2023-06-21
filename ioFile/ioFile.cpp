@@ -35,9 +35,16 @@ int main() {
 	//jika file ada maka
 	if (infile.is_open())
 	{
-		//dan tampilkan di sini
-		cout << baris << '\n';
+		//melakukan perulangan setiap baris
+		while (getline(infile, baris))
+		{
+			//dan tampilkan di sini
+			cout << baris << '\n';
+		}
+		//tutup file tersebut setelah selesai
+		infile.close();
 	}
-	//tutup file tersebut setelah selesai
-	infile.close();
+	//jika tidak ditemukan file maka akan menampilkan ini
+	else cout << "Unable to open file";
+	return 0;
 }
